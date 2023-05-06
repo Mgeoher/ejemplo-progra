@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProveedorTable extends Migration
+class CreatePredioTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,22 @@ class CreateProveedorTable extends Migration
      */
     public function up()
     {
-        Schema::create('proveedor', function (Blueprint $table) {
+        Schema::create('predio', function (Blueprint $table) {
             $table->id();
-            $table->string('codigo_proveedor', 75);
-            $table->string('nombre_proveedor',120);
+            $table->string('codigo_predio', 75)->unique();
+            $table->string('nombre_predio',120);
             $table->string('direccion',250);
-            $table->string('telefono',15);
             $table->timestamps();
         });
     }
 
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('proveedor');
+        Schema::dropIfExists('predio');
     }
 }

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CatedraticoController extends Controller
 {
     function index(){
-        $datos = Proveedor::orderBy('codigo_proveedor','desc')->paginate(3);
+        $datos = Proveedor::orderBy('codigo_proveedor','desc')->paginate(5);
         return view('home', compact('datos'));
     }
     function create(){

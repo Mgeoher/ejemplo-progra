@@ -8,13 +8,13 @@
 @endsection
 @section('content')
     <div class="card">
-        <h5 class="card-header">Agregar nuevo</h5>
+        <h5 class="card-header">Agregar nuevo Proveedor</h5>
         <div class="card-body">
 
             <p class="card-text">
                 <form action="{{route('Catedratico.store')}}" method="POST">
                 @csrf
-                <label for="">codigo_proveedor</label>
+                <label for="">Código</label>
                 <input type="text" name="codigo_proveedor" class="form-control" required>
                 <label for="">nombre_proveedor</label>
                 <input type="text" name="nombre_proveedor" class="form-control" required>
